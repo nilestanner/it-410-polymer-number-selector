@@ -1,3 +1,5 @@
+[Live Demo](http://nilestanner.com/it410/polymer-number-selector/)
+
 # Polymer Number Selector
 
 There is no automated graded for this assignment.

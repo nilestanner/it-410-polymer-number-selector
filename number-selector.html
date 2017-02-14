@@ -14,22 +14,48 @@
     </style>
 
     <!-- local DOM goes here -->
+    <iron-icon id="plus" icon="add-circle-outline"></iron-icon>
+    [[value]]
+    <iron-icon id="minus" icon="remove-circle-outline"></iron-icon>
+
   </template>
 
   <script>
   Polymer({
     is: 'number-selector',
     properties: {
-
+      value:{
+        type:Number,
+        value:0,
+        notify: true,
+        reflectToAttribute: true
+      },
+      minimum:{
+        type:Number,
+        reflectToAttribute: true
+      },
+      maximum :{
+        type:Number,
+        reflectToAttribute: true
+      }
+    },
+    listeners: {
+        'minus.tap': 'decrement',
+        'plus.tap': 'increment'
     },
     increment: function() {
-
+      this.value++;
+      if(this.value > this.maximum){
+        this.value--;
+      }
     },
     decrement: function() {
-
+      this.value--;
+      if(this.value < this.minimum){
+        this.value++;
+      }
     }
   });
   </script>
 
 </dom-module>
-
